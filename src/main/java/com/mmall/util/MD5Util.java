@@ -48,6 +48,7 @@ public class MD5Util {
     }
 
     public static String MD5EncodeUtf8(String origin) {
+        //盐值固定还是有很大概率重复
         origin = origin + PropertiesUtil.getProperty("password.salt", "");
         return MD5Encode(origin, "utf-8");
     }
